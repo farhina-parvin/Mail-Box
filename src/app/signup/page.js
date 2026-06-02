@@ -67,7 +67,14 @@ export default function SignupPage() {
 
   return (
     <div className="min-h-screen bg-[#0b0f19] flex items-center justify-center p-6 relative overflow-hidden">
-      
+      <div className="fixed top-6 right-6 z-50">
+  <Link
+    href="/"
+    className="flex items-center gap-2 px-4 py-2 text-sm rounded-lg bg-[#0e1424] border border-gray-800 text-gray-300 hover:text-white hover:border-teal-500/50 transition"
+  >
+   ←  Back To Home
+  </Link>
+</div>
       {/* Background */}
       <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-b from-blue-900/10 to-transparent pointer-events-none" />
       <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-purple-600/15 blur-[150px] rounded-full pointer-events-none" />
@@ -80,7 +87,7 @@ export default function SignupPage() {
             href="/"
             className="inline-block text-2xl font-bold bg-gradient-to-r from-teal-400 to-purple-500 bg-clip-text text-transparent mb-2"
           >
-            Mail-box
+            <span>📬</span> Mail-box
           </Link>
 
           <h2 className="text-2xl font-bold text-white">

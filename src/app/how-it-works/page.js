@@ -3,16 +3,10 @@ import Link from "next/link";
 export default function HowItWorksPage() {
   return (
     <div className="min-h-screen max-w-6xl mx-auto px-6 py-16">
-
-      {/* Back To Home Button */}
-      <div className="mb-10">
-        <Link
-          href="/"
-          className="inline-flex items-center px-4 py-2 text-sm rounded-lg bg-[#0e1424] border border-gray-800 hover:border-teal-500 hover:text-teal-400 transition"
-        >
-          ← Back To Home
-        </Link>
-      </div>
+      <nav className="flex justify-between items-center px-10 py-6 max-w-7xl mx-auto w-full z-10">
+        <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-purple-500 bg-clip-text text-transparent">📬 Mail-box</Link>
+        <Link href="/" className="inline-flex items-center px-4 py-2 text-sm rounded-lg bg-[#0e1424] border border-gray-800 hover:border-teal-500 hover:text-teal-400 transition"> ← Back to Home</Link>
+      </nav>
 
       {/* Header */}
       <div className="text-center mb-16">

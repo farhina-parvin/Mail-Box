@@ -7,6 +7,7 @@ import {
   Mail,
   CreditCard,
   User,
+  LogOut,
 } from "lucide-react";
 
 const mockEmails = [
@@ -19,21 +20,24 @@ export default function MyMailPage() {
   const [selectedMail, setSelectedMail] = useState(mockEmails[0]);
 
   return (
-    <div className="min-h-screen bg-[#070b14] text-white flex overflow-hidden relative">
+    <div className="min-h-screen bg-[#070b14] text-white flex flex-col md:flex-row overflow-hidden relative">
 
+      {/* Background */}
       <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-cyan-500/20 blur-[180px] rounded-full" />
       <div className="absolute bottom-0 left-0 w-[700px] h-[700px] bg-purple-600/20 blur-[180px] rounded-full" />
 
-      {/* SIDEBAR (same style) */}
-      <aside className="w-72 bg-black/30 backdrop-blur-xl border-r border-white/10 p-6">
+      {/* SIDEBAR */}
+      <aside className="w-full md:w-72 bg-black/30 backdrop-blur-xl border-b md:border-b-0 md:border-r border-white/10 p-4 md:p-6 flex flex-col">
 
-      <div className="text-xl font-bold flex items-center gap-2">
-        <div className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-purple-500 bg-clip-text text-transparent flex items-center gap-2">
-          <span>📬</span> Mail-box
-        </div>
+        {/* Logo */}
+        <div className="text-xl font-bold flex items-center gap-2">
+          <div className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-purple-500 bg-clip-text text-transparent flex items-center gap-2">
+            <span>📬</span> Mail-box
+          </div>
         </div>
 
-        <nav className="mt-10 space-y-2">
+        {/* NAV */}
+        <nav className="mt-6 md:mt-10 space-y-2 flex-1">
 
           <Link href="/dashboard" className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 text-gray-400">
             <LayoutDashboard size={18} />
@@ -56,13 +60,26 @@ export default function MyMailPage() {
           </Link>
 
         </nav>
+
+        {/* LOGOUT BUTTON */}
+<div className="mt-auto mb-6 flex justify-center md:justify-start">
+  <Link
+    href="/"
+    className="flex items-center justify-center gap-3 w-full px-3 md:px-4 py-3 rounded-xl border border-red-500/20 text-red-500 hover:bg-red-500/10 transition"
+  >
+    <LogOut size={18} />
+    <span className="text-center w-full md:w-auto">Log Out</span>
+  </Link>
+</div>
+
       </aside>
 
       {/* MAIN */}
-      <main className="flex flex-1">
+      <main className="flex flex-col md:flex-row flex-1 overflow-hidden">
 
         {/* EMAIL LIST */}
-        <div className="w-1/3 border-r border-white/10 bg-[#0b0f19]">
+        <div className="w-full md:w-1/3 border-b md:border-b-0 md:border-r border-white/10 bg-[#0b0f19] max-h-[40vh] md:max-h-none overflow-y-auto">
+
           <div className="p-4 border-b border-white/10 font-bold">Inbox</div>
 
           {mockEmails.map(mail => (
@@ -80,9 +97,16 @@ export default function MyMailPage() {
         </div>
 
         {/* PREVIEW */}
-        <div className="flex-1 p-8">
-          <h2 className="text-2xl font-bold mb-4">{selectedMail.subject}</h2>
-          <p className="text-gray-300 whitespace-pre-wrap">{selectedMail.body}</p>
+        <div className="flex-1 p-4 md:p-8 overflow-y-auto">
+
+          <h2 className="text-xl md:text-2xl font-bold mb-4">
+            {selectedMail.subject}
+          </h2>
+
+          <p className="text-gray-300 whitespace-pre-wrap text-sm md:text-base">
+            {selectedMail.body}
+          </p>
+
         </div>
 
       </main>

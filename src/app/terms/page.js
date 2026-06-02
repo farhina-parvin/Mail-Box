@@ -4,25 +4,18 @@ export default function TermsPage() {
   return (
     <div className="min-h-screen bg-[#0b0f19] px-6 py-12">
 
-      {/* Top Bar */}
-      <div className="max-w-3xl mx-auto flex justify-between items-center mb-8">
-        <div></div>
+<nav className="flex justify-between items-center px-10 py-6 max-w-7xl mx-auto w-full z-10">
+        <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-purple-500 bg-clip-text text-transparent">📬 Mail-box</Link>
+        <Link href="/" className="inline-flex items-center px-4 py-2 text-sm rounded-lg bg-[#0e1424] border border-gray-800 hover:border-teal-500 hover:text-teal-400 transition"> ← Back to Home</Link>
+      </nav>
 
-        <Link
-          href="/"
-          className="px-4 py-2 text-sm rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition text-gray-300"
-        >
-          ← Back To Home
-        </Link>
-      </div>
+      <div className="max-w-6xl mx-auto">
 
-      <div className="max-w-3xl mx-auto">
-
-        <h1 className="text-4xl font-bold text-white mb-8">
-          Terms of Service
+       <h1 className="text-4xl font-bold text-white mb-10 text-center">
+        Terms of Service
         </h1>
 
-        <div className="text-gray-400 space-y-6 leading-relaxed">
+        <div className="text-gray-400 space-y-6 leading-relaxed ">
           <p>Last updated: June 2026</p>
 
           <h2 className="text-xl font-bold text-white">

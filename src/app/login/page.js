@@ -49,7 +49,14 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-[#0b0f19] flex items-center justify-center p-6 relative overflow-hidden">
-      
+      <div className="fixed top-6 right-6 z-50">
+  <Link
+    href="/"
+    className="flex items-center gap-2 px-4 py-2 text-sm rounded-lg bg-[#0e1424] border border-gray-800 text-gray-300 hover:text-white hover:border-teal-500/50 transition"
+  >
+   ←  Back To Home
+  </Link>
+</div>
       {/* background effects */}
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-teal-900/10 to-transparent pointer-events-none" />
       <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-blue-600/15 blur-[150px] rounded-full pointer-events-none" />
