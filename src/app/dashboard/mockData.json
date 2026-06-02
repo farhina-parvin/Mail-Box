@@ -1,0 +1,18 @@
+{
+    "user": {
+      "name": "Alice",
+      "unreadCount": 22,
+      "totalMail": 324,
+      "recentScans": 133
+    },
+    "recentMail": [
+      { "id": 1, "sender": "Google", "snippet": "Lorem ipsum dolor sit amet, consectetuer...", "time": "4:12 PM" },
+      { "id": 2, "sender": "Amazon", "snippet": "Lorem ipsum dolor sit amet...", "time": "5:36 PM" },
+      { "id": 3, "sender": "Project Alpha", "snippet": "Lorem ipsum dolor sit amet...", "time": "3:30 PM" }
+    ],
+    "pricingPlans": [
+      { "name": "BASIC", "price": "$9.99", "storage": "5GB", "seats": "1 User seat" },
+      { "name": "ADVANCED", "price": "$24.99", "storage": "25GB", "seats": "5 User seats" },
+      { "name": "PRO", "price": "$49.99", "storage": "100GB", "seats": "Unlimited seats" }
+    ]
+  }

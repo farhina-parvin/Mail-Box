@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* Base Theme */
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: #0b0f19;
+  color: #f3f4f6;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Glow background helper */
+.gradient-bg {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(20, 184, 166, 0.15),
+    rgba(139, 92, 246, 0.15),
+    transparent 70%
+  );
+}
