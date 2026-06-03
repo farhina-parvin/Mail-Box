@@ -10,6 +10,17 @@ import {
   LogOut
 } from "lucide-react";
 
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  Legend
+} from "recharts";
+
 export default function DashboardPage() {
   const [profilePic, setProfilePic] = useState(null);
 
@@ -31,6 +42,17 @@ export default function DashboardPage() {
     },
   ];
 
+  // Chart Data
+  const mailActivity = [
+    { day: "Mon", received: 20, unread: 5 },
+    { day: "Tue", received: 35, unread: 8 },
+    { day: "Wed", received: 28, unread: 6 },
+    { day: "Thu", received: 40, unread: 10 },
+    { day: "Fri", received: 32, unread: 7 },
+    { day: "Sat", received: 50, unread: 12 },
+    { day: "Sun", received: 45, unread: 9 },
+  ];
+
   useEffect(() => {
     const saved = localStorage.getItem("profilePic");
     if (saved) setProfilePic(saved);
@@ -43,7 +65,7 @@ export default function DashboardPage() {
       <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-cyan-500/20 blur-[180px] rounded-full" />
       <div className="absolute bottom-0 left-0 w-[700px] h-[700px] bg-purple-600/20 blur-[180px] rounded-full" />
 
-      {/* TOP PROFILE ICON (VIEW ONLY) */}
+      {/* TOP PROFILE ICON */}
       <div className="fixed top-6 right-6 z-50">
         <div className="w-12 h-12 rounded-full border border-white/20 bg-white/5 overflow-hidden flex items-center justify-center">
           {profilePic ? (
@@ -151,14 +173,44 @@ export default function DashboardPage() {
         {/* CONTENT */}
         <div className="grid lg:grid-cols-3 gap-8">
 
+          {/* CHART */}
           <div className="lg:col-span-2 bg-black/30 border border-white/10 rounded-3xl p-6">
             <h3 className="text-lg font-semibold mb-6">Mail Activity</h3>
 
-            <div className="h-[320px] flex items-center justify-center text-gray-500 border border-dashed border-white/10 rounded-2xl">
-              Chart Area (Add Recharts here later)
+            <div className="h-[320px]">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={mailActivity}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#1f2937" />
+                  <XAxis dataKey="day" stroke="#9ca3af" />
+                  <YAxis stroke="#9ca3af" />
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: "#0b0f14",
+                      border: "1px solid #1f2937",
+                      borderRadius: "10px",
+                    }}
+                  />
+                  <Legend />
+                  <Line
+                    type="monotone"
+                    dataKey="received"
+                    stroke="#22d3ee"
+                    strokeWidth={3}
+                    dot={{ r: 4 }}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="unread"
+                    stroke="#a855f7"
+                    strokeWidth={3}
+                    dot={{ r: 4 }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
             </div>
           </div>
 
+          {/* RECENT MAIL */}
           <div className="bg-black/30 border border-white/10 rounded-3xl p-6">
             <h3 className="text-lg font-semibold mb-6">Recent Mail</h3>
 
